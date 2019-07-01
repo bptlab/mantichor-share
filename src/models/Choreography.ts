@@ -13,7 +13,10 @@ export class Choreography extends Typegoose {
   public name: string = '';
 
   @prop({ required: true })
-  public xml: string = '';
+  public bpmnXML: string = '';
+
+  @prop({ required: true })
+  public dateSaved: Date = new Date();
   // endregion
 
   // region private members
