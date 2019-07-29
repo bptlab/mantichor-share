@@ -1,7 +1,6 @@
 import { Typegoose, prop } from 'typegoose';
 
-export class Choreography extends Typegoose {
-  [index: string]: any;
+export class Model extends Typegoose {
   // region public static methods
   // endregion
 
@@ -33,6 +32,6 @@ export class Choreography extends Typegoose {
 
 }
 
-const ChoreographyModel = new Choreography().getModelForClass(Choreography);
+const ModelModel = new Model().getModelForClass(Model);
 
-export default ChoreographyModel;
+export default ModelModel;

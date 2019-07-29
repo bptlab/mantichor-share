@@ -2,7 +2,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 import cors from 'cors';
-import choreographyRouter from '@/routes/choreographies';
+import models from '@/routes/models';
 
 async function startApiServer(): Promise<void> {
   const app: express.Application = express();
@@ -12,11 +12,8 @@ async function startApiServer(): Promise<void> {
   app.use(bodyParser.json());
   app.use(cors());
 
-  app.use('/choreographies', choreographyRouter);
-
-  app.get('/', (req: express.Request, res: express.Response) => {
-    res.send('hello world!');
-  });
+  app.use('/models', models);
+  app.use('/instances', instances);
 
   app.listen(port);
 }
