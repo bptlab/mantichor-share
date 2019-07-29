@@ -3,12 +3,13 @@ import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 import models from '@/routes/models';
+import instances from '@/routes/instances';
 
 async function startApiServer(): Promise<void> {
   const app: express.Application = express();
   const port: string = process.env.PORT || '3000';
 
-  app.use(bodyParser.urlencoded({extended: true}));
+  app.use(bodyParser.urlencoded({ extended: true }));
   app.use(bodyParser.json());
   app.use(cors());
 
